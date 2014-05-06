@@ -19,7 +19,7 @@ Cylon.robot({
 	work: function(my) {
 		io.sockets.on('connection', function (socket) {
 		  socket.on('color', function (data) {
-				colour = parseInt(data,16);
+				colour = parseInt(data,10);
 		    console.log(colour);
 				
 				my.sphero.setColor(colour);
@@ -30,10 +30,10 @@ Cylon.robot({
 }).start();
 
 
-// for debuging when no sphero presant
+// for debugging when no sphero present
 io.sockets.on('connection', function (socket) {
   socket.on('color', function (data) {
-		colour = parseInt(data,16);
+		colour = parseInt(data,10);
     console.log(colour);
 	});	
 });
