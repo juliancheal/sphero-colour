@@ -8,9 +8,10 @@ var express = require('express'),
 
 server.listen(8080);
 
-app.get('/', function(req, res){
-    res.sendfile(__dirname + '/index.html');
-});
+// app.get('/', function(req, res){
+//     res.sendfile(__dirname + '/index.html');
+// });
+app.use(express.static(__dirname + "/public/"));
 
 Cylon.robot({
   connection: { name: 'sphero', adaptor: 'sphero', port: '/dev/tty.Sphero-BOO-RN-SPP' },
